@@ -22,7 +22,6 @@ pub fn parse(text: &str) -> JsValue {
 
     // parse script
     let script = parse_to_node(text).unwrap();
-    println!("{:?}", script);
 
     let jsValue = serde_wasm_bindgen::to_value(&script).unwrap();
 
