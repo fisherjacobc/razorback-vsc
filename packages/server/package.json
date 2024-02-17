@@ -1,0 +1,13 @@
+{
+  "name": "language-server",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {},
+  "license": "MIT",
+  "dependencies": {
+    "old-parser": "workspace:*",
+    "parser": "workspace:*",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.11"
+  }
+}

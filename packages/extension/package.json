@@ -1,0 +1,47 @@
+{
+  "name": "extension",
+  "version": "0.0.1",
+  "author": "fisherjacobc",
+  "license": "MIT",
+  "main": "dist/extension.js",
+  "activationEvents": [
+    "onLanguage:rz"
+  ],
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "engines": {
+    "vscode": "^1.43.0"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "razorback",
+        "extensions": [
+          ".rz"
+        ],
+        "aliases": [
+          "Razorback"
+        ],
+        "configuration": "./syntaxes/language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "razorback",
+        "scopeName": "source.razorback",
+        "path": "./syntaxes/razorback.tmGrammar.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "parser": "workspace:*",
+    "old-parser": "workspace:*",
+    "vscode-languageclient": "^7.0.0",
+    "vscode-languageserver-protocol": "^3.16.0"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.52.0",
+    "@vscode/test-electron": "^1.6.1"
+  }
+}

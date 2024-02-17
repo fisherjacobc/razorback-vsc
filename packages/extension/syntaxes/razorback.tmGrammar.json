@@ -1,0 +1,146 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "scopeName": "source.razorback",
+    "fileTypes": ["rz"],
+    "patterns": [
+      {
+        "include": "#expression"
+      }
+    ],
+    "repository": {
+      "expression": {
+        "patterns": [
+          {
+            "include": "#comment"
+          },
+          {
+            "include": "#tag"
+          },
+          {
+            "include": "#markdown"
+          }
+        ]
+      },
+      "markdown": {
+        "patterns": [
+          {
+            "comment": "bold",
+            "match": "(?<!\\\\)\\*\\*.*\\*\\*",
+            "name": "markup.bold"
+          },
+          {
+            "comment": "italic",
+            "match": "(?<!\\\\)\\*.*?\\*",
+            "name": "markup.italic"
+          },
+          {
+            "comment": "code",
+            "begin": "(?<!`|\\\\)`(?=[^`])",
+            "end": "`",
+            "name": "markup.inline.raw.string.markdown"
+          },
+          {
+            "comment": "strikethrough",
+            "match": "(?<!\\\\)~~.*~~",
+            "name": "markup.other.strikethrough.markdown"
+          },
+          {
+            "comment": "underline",
+            "match": "(?<!\\\\)__.*__",
+            "name": "markup.underline"
+          },
+          {
+            "comment": "quotes",
+            "match": "^> ",
+            "name": "punctuation.definition.quote.begin.markdown"
+          },
+          {
+            "comment": "mentions",
+            "match": "<(@!?|#|@&)?[0-9]{17,21}>",
+            "name": "markup.bold"
+          },
+          {
+            "comment": "codeblock",
+            "begin": "(?<!\\\\)(```)(\\w+)\n",
+            "beginCaptures": {
+              "1": {
+                "name": "markup.bold"
+              },
+              "2": {
+                "name": "markup.italic"
+              }
+            },
+            "end": "```",
+            "endCaptures": {
+              "0": {
+                "name": "markup.bold"
+              }
+            }
+          }
+        ]
+      },
+      "comment": {
+        "begin": "//",
+        "end": "$",
+        "name": "comment.block",
+        "patterns": []
+      },
+      "tag": {
+        "name": "meta.tag",
+        "begin": "{",
+        "beginCaptures": {
+          "0": {
+            "name": "meta.tag.open"
+          }
+        },
+        "end": "}",
+        "endCaptures": {
+          "0": {
+            "name": "meta.tag.close"
+          }
+        },
+        "patterns": [
+          {
+            "comment": "nested tags",
+            "include": "$self"
+          },
+          {
+            "comment": "tag separators",
+            "match": ";",
+            "name": "meta.tag.separator"
+          },
+          {
+            "comment": "get, set, perget, perset keys",
+            "match": "(?<={(?:get|set|perget|perset);)[^;}]+",
+            "name": "variable.name"
+          },
+          {
+            "comment": "tag parameters that are regex - it's too difficult to match just {find} and {replace}",
+            "match": "(?<=;)/[^/]+/[gimus]+?(?=;|})",
+            "name": "string.regexp"
+          },
+          {
+            "comment": "tag parameters that are booleans",
+            "match": "(?<=;)(true|false)",
+            "name": "constant.language"
+          },
+          {
+            "comment": "tag parameters that are numbers",
+            "match": "(?<=;)[0-9]+",
+            "name": "constant.numeric"
+          },
+          {
+            "comment": "tag names",
+            "match": "(?<={)[\\w\\.]+",
+            "name": "entity.name.function"
+          },
+          {
+            "comment": "snowflake parameters",
+            "match": "[0-9]{17,20}",
+            "name": "constant.numeric"
+          }
+        ]
+      }
+    }
+  }
+  

@@ -1,0 +1,33 @@
+{
+    "comments": {
+        "blockComment": [
+            "//"
+        ]
+    },
+    "brackets": [
+        [
+            "{",
+            "}"
+        ] // tags
+    ],
+    "autoClosingPairs": [
+        [
+            "{",
+            "}"
+        ], // tag brackets
+        [
+            "[",
+            "]"
+        ], // convenience
+        [
+            "(",
+            ")"
+        ] // convenience
+    ],
+    "surroundingPairs": [
+        [
+            "{",
+            "}"
+        ] // tags
+    ]
+}

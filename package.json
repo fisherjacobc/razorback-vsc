@@ -1,0 +1,23 @@
+{
+  "name": "razorback-vsc",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "author": "fisherjacobc",
+  "license": "MIT",
+  "keywords": [],
+  "scripts": {
+    "lint": "tsc",
+    "build": "tsc --build",
+    "watch": "tsc --build --watch"
+  },
+  "engines": {
+    "vscode": "^1.43.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "typescript": "^5.3.3"
+  }
+}
