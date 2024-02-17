@@ -8,7 +8,7 @@
   "keywords": [],
   "scripts": {
     "lint": "tsc",
-    "build": "tsc --build",
+    "build": "tsc --build && wasm-pack build --target nodejs",
     "watch": "tsc --build --watch"
   },
   "engines": {
