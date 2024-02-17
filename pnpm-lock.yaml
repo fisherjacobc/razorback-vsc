@@ -58,8 +58,6 @@ importers:
         specifier: ^9.0.1
         version: 9.0.1
 
-  packages/razorback: {}
-
   packages/razorback/pkg: {}
 
   packages/server:
