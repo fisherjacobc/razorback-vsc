@@ -23,4 +23,5 @@ pub enum Node<'a> {
     Reference(&'a str),
     Array(Vec<Node<'a>>),
     Object(Vec<(&'a str, Node<'a>)>),
+    EOI(),
 }
