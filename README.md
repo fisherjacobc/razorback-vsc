@@ -11,8 +11,8 @@ This monorepo relies on a modified razorback package to parse the code and relay
 - [extension](/packages/extension/)
 - [server](/packages/server/)
 - [parser](/packages/parser/)
-- [razorback (modified)](/packages/razorback/) - [(original source code)](https://github.com/sylv/atlas/packages/razorback)
-- [razorback_derive](/packages/razorback_derive/) - [(original source code)](https://github.com/sylv/atlas/packages/razorback_derive)
+- [razorback (modified)](/packages/razorback/) - [(original source code)](https://github.com/sylv/atlas/tree/main/packages/razorback)
+- [razorback_derive](/packages/razorback_derive/) - [(original source code)](https://github.com/sylv/atlas/tree/main/packages/razorback_derive)
 
 ## Notes
 
